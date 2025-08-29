@@ -8,11 +8,9 @@ const Products = () => {
   const products = useSelector((state) => state.products.items);
 
   useEffect(() => {
-    // async function banani hogi useEffect ke andar
     const fetchData = async () => {
         const res = await axios.get("https://fakestoreapi.com/products");
         console.log(">>>>>>>>>axiosData>>>>>>>>>", res.data);
-
         dispatch(setProducts(res.data));
     };
 
